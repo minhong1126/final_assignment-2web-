@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- 물어볼 사람 찾기-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="css.css" type="text/css" rel="stylesheet">
+    <title>동물 찾기</title>
+    <script>
+        function hint(){
+                window.open('second_hint.html','_blank', 'width=400, height=400, left=950, top=50');
+            }
+        
+        var chance = 0;
+        function answer(){
+            var ans = document.getElementById("ans").value;
+            if(ans=="친칠라"){ 
+                alert("맞는 것 같아!");
+                chance = 4;
+                location.href = "third.html"
+            }
+            else if((ans=="쥐") || (ans=="새앙토끼") || (ans=="토끼")){ alert("거의 다 왔어!")}
+            else{ alert("아니야! 다시 한 번 생각해보자!")}
+            chance ++
+            if(chance>5){ alert("힌트 내용을 드래그 해보자!")}
+        }
+
+    </script>
+</head>
+<body>
+    <header>
+        <progress max=100 value=40></progress><b> 2단계</b>
+    </header>
+    <section>
+    <img src="media/저기용.jpg" width="30%" title="누구세요?"></img>
+    <div>
+        맞아! 여긴 후문이었지!<br>
+        그러면 공 6호관으로 가면 되겠다! <br>
+        그치만 어떻게 가더라..? <br>
+        어느 방향이었지?<br><br>
+        길치 곰두리는 모르겠어!<br>
+        저기 지나가는 사람한테 물어보자!<br>
+        근데 저건 어떤 동물이지...?<br>
+        <br>
+
+        <form>
+            <input type="text" id="ans" size="3" placeholder="3글자" maxlength="3"></form>
+        </form>
+        <br>
+        <button id="but" onclick="hint()">힌트 보기</button>    <button onclick="answer()">알아냈어!</button>
+        <br>
+    </div>
+    </section>
+</body>
+</html>
