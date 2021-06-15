@@ -1,1 +1,1 @@
-이거 대체 어케하는 거지
+https://minhong1126.github.io/final_assignment-2web-/
