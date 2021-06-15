@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--학번 쓰기-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="css.css" type="text/css" rel="stylesheet">
+    <title>거의 다 도착했어!</title>
+    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        function number(){
+            event.preventDefault();
+            if( $("input").val() > 202000000){
+                location.href = "end1.html";
+            }
+            else{ 
+                location.href = "end2.html";
+            };             
+        }
+    </script>
+</head>
+<body>
+    <progress max=100 value=80></progress><b>4단계</b>
+    <div>
+        <br>
+        드디어 강의실에 도착했어!<br>
+        그런데 명단을 쓰고 들어가라고? <br>
+        이정도는 쉽지! <br>
+        간단하게 학번을 적자! <br>
+        <br><br>
+        <form>
+            <input type="number" placeholder="학번" maxlength="9">
+            <button type="submit" onclick="number()"> 다 적었어! </button>
+        </form>
+    </div>
+</body>
+</html>
