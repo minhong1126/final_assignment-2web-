@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<!-- 호수였나 뭐였지 강의실 찾기-->
+<head>
+    <meta charset="UTF-8">
+    <link href="css.css" type="text/css" rel="stylesheet">
+    <title>호수 찾기</title>
+    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        var i = 0;
+        var div = document.getElementsByClassName("in");
+
+        function clicked(id){
+            if(i<3){
+                $(div[i]).text(id);
+                i++;
+            }
+        }
+        var chance = 1;
+        function check(){
+            var str = 0;
+            var ball = 0;
+            var out = 0;
+            var ans = new Array();
+            ans = [6, 0, 8];
+            var input = new Array();
+
+            for(var k=0; k<3; k++){
+                input[k] =  $(div[k]).text();
+            }
+            for(var k=0; k<3; k++){
+                for(var j=0; j<3; j++){
+                    if(input[k] == ans[j]){
+                        if(input[k] == ans[k]){
+                            str++;
+                        }
+                        else{ ball ++}
+                    }
+                }
+            }
+            out = 3 - (str + ball);
+            if(str == 3){
+                alert("맞아 여기였지!");
+                location.href = "forth.html"
+            }
+
+                $("table").append(
+                    "<tr><td>" +chance + "</td>" +  
+                    "<td>" + str + "</td>" +
+                    "<td>" + ball + "</td>" +
+                    "<td>" + out + "</td></tr>")
+                i = 0;
+                chance ++;
+                del();
+            }
+        function del(){
+            for(var j=0; j<3; j++){
+                $(div[j]).text("?");
+            }
+        }
+        function help(){
+            window.open('third_help.html','_blank', 'width=400, height=450, top=50, right=50');
+        }
+    </script>
+
+    <style>
+        .in{
+            display: inline-block;
+            width: auto;
+            margin: auto; 
+            height: 3%;
+        }
+        .but {
+            background-color: rgb(240, 240 , 240);
+            padding: 10px 1% 10px 1%;
+            border: none; 
+        }
+        table{
+            border: double rgb(49, 49, 49);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="media/열심두리.jpg" class="duri" id="duri3">
+        <progress max=100 value=60></progress><b>3단계</b>
+    </header>
+    <section>
+    <img >
+    <div>
+        겨우 도착했네!<br>
+        강의실에 들어가려는데<br>
+        어라?<br>
+        몇 호였지?<br>
+        기억이 안 나!<br>
+        에타를 보니까<br>
+        이걸 야구 게임으로 맞추라고?<br>
+        너무 말도 안 되는 거 아니야?<br><br>
+        (수는 중복되지 않는 걸 유의하자!)<br><br>
+
+        <p style="font-size: 6px;">야구 게임이 뭔지 모른다면?</p>
+        <button style="font-size: 4px;" onclick="help()">help!</button>
+        <br><br>
+
+        <div class="in">?</div> <div class="in">?</div> <div class="in">?</div>
+        <br><br>
+            <button class="but" onclick="clicked(1)">1</button>
+            <button class="but" onclick="clicked(2)">2</button>
+            <button class="but" onclick="clicked(3)">3</button>
+            <button class="but" onclick="clicked(4)">4</button>
+            <button class="but" onclick="clicked(5)">5</button>
+            <button class="but" onclick="clicked(6)">6</button>
+            <button class="but" onclick="clicked(7)">7</button>
+            <button class="but" onclick="clicked(8)">8</button>
+            <button class="but" onclick="clicked(9)">9</button>
+            <button class="but" onclick="clicked(0)">0</button>
+        <br><br>
+        <button onclick="check()">입력!</button>
+        <br><br><br>
+        <hr>
+        <table>
+                <tr>
+                    <th>chance</th><th>strike</th> <th>ball</th> <th>out</th>
+                </tr>
+        </table>
+    </div>
+    </section>
+</body>
+</html>
