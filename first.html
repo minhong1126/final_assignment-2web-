@@ -12,7 +12,8 @@
             var img = document.createElement(img);
             img.innerHTML = "<img style='display: inline; width: 70%;' src='media/craft_map_img.jpg'>" 
                 + "</img>";
-            img.title = "출처: 강원대학교 춘천캠퍼스 캠퍼스맵";
+            img.title = "출처: 강원대학교 춘천캠퍼스 캠퍼스맵 클릭하면 이동!";
+            img.setAttribute("onclick", "location.href='https://www.kangwon.ac.kr/site/campusmap/chuncheon.html'")
             div.innerHTML = " <br> 어디보자... <br> 내 뒤에 들어왔던 출입구가 있고 <br> 건물이 빽빽해!<br>"
              + "경사는 조금 높은 편인 것 같은데... <br> 계단이 엄청 많은 건물도 있네! <br>"
              + "<br> 아! 저기 동상이 하나 있어!<br> 아마 학교의 상징이었던 거 같은데?"
