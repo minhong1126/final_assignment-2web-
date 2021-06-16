@@ -4,6 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <link href="css.css" type="text/css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        function eg(){
+        $("#hing").attr("src", "media/화난계란2.jpg");
+            $("#hing").attr("title", "물도 있어!");
+        }
+    </script>
+    <style>
+        #hing{
+            width: 3%;
+            position: absolute;
+            left: 10px;
+            top: 480px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,6 +31,7 @@
             이 강의실 정말 오랜만이야!<br>
             벌써부터 집 가고 싶은 걸?<br><br>
             <button onclick="location.href='plus.html'">수고했네!</button>
+            <img src="media/화난계란1.jpg" onclick='eg()' title='뭘 봐! 불만 있어?' id="hing">
         </div>
     </section>
 </body>

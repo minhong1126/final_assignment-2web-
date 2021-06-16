@@ -10,9 +10,8 @@
         function number(){
             if(($("input").val()).length != 9){
                 alert("학번을 9자리 숫자로 다시 적어보자!");
-                window.location.reload();
             }
-                else{
+            else{
                 event.preventDefault();
                 if( $("input").val() > 202000000){
                     location.href = "end1.html";
@@ -22,12 +21,25 @@
                 }
             }             
         }
+        function eg(){
+            $("#hing").attr("src", "media/힝구계란2.jpg");
+            $("#hing").attr("title", "어떻게 찾은 거지...?");
+        }
     </script>
+    <style>
+        #hing{
+            width: 3%;
+            position: absolute;
+            left: 500px;
+            top: 50px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <img src="media/열심두리.jpg" class="duri" id="duri4">
         <progress max=100 value=80></progress><b>4단계</b>
+        <img src="media/힝구계란1.jpg" onclick='eg()' title='숨는 중...' id="hing">
     </header>
     <div>
         <br>
@@ -40,6 +52,8 @@
             <input type="number" placeholder="학번" maxlength="9">
             <button type="submit" onclick="number()"> 다 적었어! </button>
         </form>
+        <br><br>
+        <button onclick="location.href='end1.html'" style="font-size: 4px;">작동이 안 되면 넘어가자!</button>
     </div>
 </body>
 </html>

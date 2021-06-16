@@ -61,6 +61,16 @@
         function help(){
             window.open('third_help.html','_blank', 'width=400, height=450, top=50, right=50');
         }
+        function eg(){
+            var count = 0;
+            var img = ["media/넙치2.jpg", "media/넙치3.jpg", "media/넙치4.jpg", "media/넙치5.jpg"];
+            var time = setInterval(function(){
+                $("#fish").attr("src", img[count]);
+                count++
+            }, "1000");
+            setTimeout(() => clearInterval(time), 4000);
+            $("#fish").attr("title", "사실 넙치였어...!");
+        }
     </script>
 
     <style>
@@ -77,6 +87,12 @@
         }
         table{
             border: double rgb(49, 49, 49);
+        }
+        #fish{
+            width: 3%;
+            position: absolute;
+            left: 10px;
+            top: 10px;
         }
     </style>
 </head>
@@ -127,5 +143,6 @@
         </table>
     </div>
     </section>
+    <img src="media/넙치1.jpg" id="fish" title="이것도 이스터에그 계란인가..?" onclick="eg()">
 </body>
 </html>
