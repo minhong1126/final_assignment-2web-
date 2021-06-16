@@ -8,13 +8,19 @@
     <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
         function number(){
-            event.preventDefault();
-            if( $("input").val() > 202000000){
-                location.href = "end1.html";
+            if(($("input").val()).length != 9){
+                alert("학번을 9자리 숫자로 다시 적어보자!");
+                window.location.reload();
             }
-            else{ 
-                location.href = "end2.html";
-            };             
+                else{
+                event.preventDefault();
+                if( $("input").val() > 202000000){
+                    location.href = "end1.html";
+                }
+                else{ 
+                    location.href = "end2.html";
+                }
+            }             
         }
     </script>
 </head>
