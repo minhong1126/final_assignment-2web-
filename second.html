@@ -6,6 +6,7 @@
     <link href="css.css" type="text/css" rel="stylesheet">
     <title>동물 찾기</title>
     <script>
+        var black = 0;
         function hint(){
                 window.open('second_hint.html','_blank', 'width=400, height=400, left=950, top=50');
             }
@@ -17,7 +18,7 @@
                 chance = 2;
                 location.href = "third.html"
             }
-            else if((ans=="다람쥐") || (ans=="새앙토끼") || (ans=="토끼")){ alert("거의 다 왔어!")}
+            else if((ans=="다람쥐") || (ans=="앙고라") || (ans=="토끼")){ alert("거의 다 왔어!")}
             else{ alert("아니야! 다시 한 번 생각해보자!")}
             chance ++
             if(chance>3){ alert("힌트 내용을 드래그 해보자!")}
